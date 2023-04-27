@@ -48,5 +48,10 @@ public class AnimeServiceImpl implements AnimeService {
         return anime.orElseGet(null);
     }
 
+    @Override
+    public List<Anime> getRandomAnimes(int limit) {
+        return animeRepository.getRandomAnimes(limit);
+    }
+
 
 }

@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/animes")
 public class AnimeRestController {
@@ -38,5 +40,10 @@ public class AnimeRestController {
             @RequestParam(value = "sortType", defaultValue = "DESC", required = false) String sortType
     ){
         return ResponseEntity.ok(animeService.getAllAnimes(pageNumber, pageSize, sortBy, sortType));
+    }
+
+    @GetMapping("/random")
+    public ResponseEntity<List<Anime>> getRandomAnime(@RequestParam(value = "limit") int limit){
+        return ResponseEntity.ok(animeService.getRandomAnimes(limit));
     }
 }
