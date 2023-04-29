@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/animes")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class AnimeRestController {
 
     private AnimeService animeService;
@@ -43,7 +44,18 @@ public class AnimeRestController {
     }
 
     @GetMapping("/random")
-    public ResponseEntity<List<Anime>> getRandomAnime(@RequestParam(value = "limit") int limit){
+    public ResponseEntity<List<Anime>> getRandomAnime(
+            @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
+    ){
         return ResponseEntity.ok(animeService.getRandomAnimes(limit));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Anime>> searchAnimeByTitleOrTitleSynonyms(
+            @RequestParam(value = "title") String title,
+            @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
+    ){
+        List<Anime> animes = animeService.searchAnimeByTitleOrTitleSynonyms(title, limit);
+        return ResponseEntity.ok(animes);
     }
 }

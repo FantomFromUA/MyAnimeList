@@ -53,5 +53,10 @@ public class AnimeServiceImpl implements AnimeService {
         return animeRepository.getRandomAnimes(limit);
     }
 
+    @Override
+    public List<Anime> searchAnimeByTitleOrTitleSynonyms(String title, int limit) {
+        return animeRepository.searchAnimeByTitleOrTitleSynonyms(title.toLowerCase(), PageRequest.of(0, limit));
+    }
+
 
 }

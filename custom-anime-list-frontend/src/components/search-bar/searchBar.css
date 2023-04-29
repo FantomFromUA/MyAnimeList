@@ -1,0 +1,19 @@
+.serched-element {
+    background-color: white;
+    display: flex;
+    padding: 7px;
+  }
+  
+.serched-element:hover {
+    background-color: #e0e0e0;
+}
+
+.main-form{
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 65%;
+    width: 320px;
+}
+

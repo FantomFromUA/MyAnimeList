@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaSearch } from 'react-icons/fa'
+import SearchBar from '../search-bar/SearchBar';
 
 const Header = () => {
 
@@ -27,19 +28,7 @@ const Header = () => {
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         <Nav className="ml-auto">
-        <Form className="d-flex my-2">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              value={animeSearch}
-              onChange={e => setAnimeSearch(e.target.value)}
-            />
-            <Button className='btn btn-dark' disabled={animeSearch.length === 0}>
-              <FaSearch />
-            </Button>
-          </Form>
+          <SearchBar/>
           <Nav.Link href="#pricing" className='mt-1'>Sign up</Nav.Link>
         </Nav>
       </Container>

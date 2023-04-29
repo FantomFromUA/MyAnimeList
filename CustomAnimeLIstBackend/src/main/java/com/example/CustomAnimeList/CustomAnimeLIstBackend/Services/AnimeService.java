@@ -13,4 +13,6 @@ public interface AnimeService {
 
     List<Anime> getRandomAnimes(int limit);
 
+    List<Anime> searchAnimeByTitleOrTitleSynonyms(String title, int limit);
+
 }
