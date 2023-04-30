@@ -11,6 +11,8 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "bootstrap": "^5.2.3",
+    "mdb-react-ui-kit": "^6.0.0",
+    "mdbreact": "^5.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
