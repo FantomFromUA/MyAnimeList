@@ -2,6 +2,7 @@
     background-color: white;
     display: flex;
     padding: 7px;
+    cursor: pointer;
   }
   
 .serched-element:hover {
@@ -9,11 +10,11 @@
 }
 
 .main-form{
-    margin-top: 7px;
+    padding-top: 7px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 65%;
-    width: 320px;
+    left: 63%;
+    width: 350px;
 }
 
