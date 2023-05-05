@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaSearch } from 'react-icons/fa'
-import HeaderSearchBar from './HeaderSearchBar';
+import SearchBar from '../search-bar/SearchBar';
 
 const Header = () => {
 
@@ -28,7 +28,7 @@ const Header = () => {
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         <Nav className="ml-auto">
-          <HeaderSearchBar/>
+          <SearchBar/>
           <Nav.Link href="#pricing" className='mt-1'>Sign up</Nav.Link>
         </Nav>
       </Container>

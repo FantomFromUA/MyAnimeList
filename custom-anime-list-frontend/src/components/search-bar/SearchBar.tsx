@@ -15,7 +15,7 @@ const HeaderSearchBar = () => {
         if (animeSearch === "") {
             return;
         }
-        searchAnimes(animeSearch, 5).then((animesResponse: AnimeModel[]) => {
+        searchAnimes(animeSearch, 4).then((animesResponse: AnimeModel[]) => {
             setAnimes(animesResponse);
         }).catch((error: Error) => {
             setHttpError(error.message);
@@ -28,7 +28,7 @@ const HeaderSearchBar = () => {
     }
 
     return (
-        <Form className="main-form" onBlur={reset}>
+        <Form className="mt-1" onBlur={reset} style={{width: "18vw"}}>
             <div className='relative d-flex'>
                 <Form.Control
                     type="search"
@@ -53,6 +53,7 @@ const HeaderSearchBar = () => {
                     <FaSearch />
                 </Button>
             </div>
+            <div className='main-form'>
             {animes.length > 0 && <div className='mt-2 w-full bg-white border border-dark'>
                 {animes.map((anime: AnimeModel) => (
                     <div key={anime.id}>
@@ -70,6 +71,7 @@ const HeaderSearchBar = () => {
                     </div>
                 ))}
             </div>}
+            </div>
         </Form>
     );
 }
