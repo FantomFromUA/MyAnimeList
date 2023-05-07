@@ -58,5 +58,15 @@ public class AnimeServiceImpl implements AnimeService {
         return animeRepository.searchAnimeByTitleOrTitleSynonyms(title.toLowerCase(), PageRequest.of(0, limit));
     }
 
+    @Override
+    public List<Anime> getTopScoredAnime(int limit) {
+        return animeRepository.getTopScoredAnimes(PageRequest.of(0, limit));
+    }
+
+    @Override
+    public List<Anime> getMostPopularAnime(int limit) {
+        return animeRepository.getMostPopularAnimes(PageRequest.of(0, limit));
+    }
+
 
 }

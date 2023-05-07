@@ -14,5 +14,6 @@
     flex-direction: column;
     position: absolute;
     width: 20vw;
+    z-index: 1;
 }
 

@@ -5,8 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaSearch } from 'react-icons/fa'
-import SearchBar from '../search-bar/SearchBar';
-
+import SearchBar from "../search-bar/SearchBar"
 const Header = () => {
 
   const [animeSearch, setAnimeSearch] = React.useState("");

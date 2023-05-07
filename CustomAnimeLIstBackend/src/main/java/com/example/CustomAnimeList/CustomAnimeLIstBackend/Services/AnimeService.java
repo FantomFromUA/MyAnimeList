@@ -15,4 +15,8 @@ public interface AnimeService {
 
     List<Anime> searchAnimeByTitleOrTitleSynonyms(String title, int limit);
 
+    List<Anime> getTopScoredAnime(int limit);
+
+    List<Anime> getMostPopularAnime(int limit);
+
 }

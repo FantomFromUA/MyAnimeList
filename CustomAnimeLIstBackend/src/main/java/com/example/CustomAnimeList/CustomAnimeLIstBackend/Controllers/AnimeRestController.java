@@ -55,7 +55,23 @@ public class AnimeRestController {
             @RequestParam(value = "title") String title,
             @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
     ){
-        List<Anime> animes = animeService.searchAnimeByTitleOrTitleSynonyms(title, limit);
-        return ResponseEntity.ok(animes);
+        List<Anime> animeList = animeService.searchAnimeByTitleOrTitleSynonyms(title, limit);
+        return ResponseEntity.ok(animeList);
+    }
+
+    @GetMapping("/top-scored")
+    public ResponseEntity<List<Anime>> getTopScoredAnime(
+            @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
+    ){
+        List<Anime> animeList = animeService.getTopScoredAnime(limit);
+        return ResponseEntity.ok(animeList);
+    }
+
+    @GetMapping("/most-popular")
+    public ResponseEntity<List<Anime>> getMostPopularAnime(
+            @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
+    ){
+        List<Anime> animeList = animeService.getMostPopularAnime(limit);
+        return ResponseEntity.ok(animeList);
     }
 }

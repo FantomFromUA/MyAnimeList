@@ -1,0 +1,20 @@
+.carousel-element{
+    display: flex;
+    justify-content: center;
+}
+
+.anime-carousel-container{
+    margin: 10px;
+}
+
+.anime-carousel-container img{
+    width: 200px;
+    height: 280px;
+    cursor: pointer;
+    filter: brightness(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.anime-carousel-container:hover img {
+    filter: brightness(70%);
+}

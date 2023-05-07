@@ -7,9 +7,13 @@ import Footer from './components/footer/Footer';
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
-      <Router />
-      <Footer/>
+      <div style={{minHeight: "100vh", display: "flex", flexDirection: "column"}}>
+        <Header />
+        <div style={{flex: 1}}>
+          <Router />
+        </div>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

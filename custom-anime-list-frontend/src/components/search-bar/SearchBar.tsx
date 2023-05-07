@@ -5,7 +5,7 @@ import AnimeModel from '../../models/AnimeModel';
 import { searchAnimes } from '../../http/AnimeHttp';
 import './searchBar.css';
 
-const HeaderSearchBar = () => {
+const SearchBar = () => {
     const [animeSearch, setAnimeSearch] = React.useState("");
     const [animes, setAnimes] = React.useState<AnimeModel[]>([]);
     const [httpError, setHttpError] = React.useState("");
@@ -76,4 +76,4 @@ const HeaderSearchBar = () => {
     );
 }
 
-export default HeaderSearchBar;
+export default SearchBar;
