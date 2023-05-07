@@ -19,7 +19,7 @@ const AnimeCarousel: React.FC<{ animes: AnimeModel[] }> = (props) => {
                                     alt="Image"
                                     onClick={() => window.location.href = `/animes/${anime.id}`}
                                 />
-                                <div style={{ maxWidth: "200px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                <div style={{ maxWidth: "12vw", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                                     <Link style={{ wordWrap: "break-word" }} to={`/animes/${anime.id}`}>{anime.title}</Link>
                                 </div>
                             </div>

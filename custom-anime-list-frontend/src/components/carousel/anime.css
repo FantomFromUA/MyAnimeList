@@ -5,12 +5,15 @@
 
 .anime-carousel-container{
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .anime-carousel-container img{
-    width: 200px;
-    height: 280px;
-    cursor: pointer;
+    width: 12vw;
+    height: auto;
     filter: brightness(100%);
     transition: filter 0.3s ease-in-out;
 }

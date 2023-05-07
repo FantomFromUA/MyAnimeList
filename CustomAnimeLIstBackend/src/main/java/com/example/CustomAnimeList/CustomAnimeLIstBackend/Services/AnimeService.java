@@ -19,4 +19,6 @@ public interface AnimeService {
 
     List<Anime> getMostPopularAnime(int limit);
 
+    List<Anime> getMySuggestions();
+
 }

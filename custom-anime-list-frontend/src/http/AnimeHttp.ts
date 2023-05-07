@@ -49,3 +49,14 @@ export const getMostPopularAnime = async (limit: number) => {
     return responseJSON;
 }
 
+export const getMySuggestions = async () => {
+    const url: string = `http://localhost:9090/api/animes/my-suggestions`;
+
+    const response = await fetch(url);
+    if(!response.ok){
+        throw new Error("Something went wrong");
+    }
+
+    const responseJSON = await response.json();
+    return responseJSON;
+}

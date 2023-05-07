@@ -4,6 +4,7 @@ import com.example.CustomAnimeList.CustomAnimeLIstBackend.Entity.Anime;
 import com.example.CustomAnimeList.CustomAnimeLIstBackend.Response.PageableAnimeResponse;
 import com.example.CustomAnimeList.CustomAnimeLIstBackend.Services.AnimeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 public class AnimeRestController {
 
     private AnimeService animeService;
+
 
     @Autowired
     public AnimeRestController(AnimeService animeService) {
@@ -72,6 +74,12 @@ public class AnimeRestController {
             @RequestParam(value = "limit", defaultValue = "10", required = false) int limit
     ){
         List<Anime> animeList = animeService.getMostPopularAnime(limit);
+        return ResponseEntity.ok(animeList);
+    }
+
+    @GetMapping("/my-suggestions")
+    public ResponseEntity<List<Anime>> getMySuggestions(){
+        List<Anime> animeList = animeService.getMySuggestions();
         return ResponseEntity.ok(animeList);
     }
 }

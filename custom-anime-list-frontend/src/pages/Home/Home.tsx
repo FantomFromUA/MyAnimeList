@@ -1,12 +1,13 @@
 import * as React from 'react';
 import AnimeModel from '../../models/AnimeModel';
-import { getMostPopularAnime, getRandomAnimes, getTopScoredAnime } from '../../http/AnimeHttp';
+import { getMostPopularAnime, getMySuggestions, getRandomAnimes, getTopScoredAnime } from '../../http/AnimeHttp';
 import AnimeCarousel from '../../components/carousel/AnimeCarousel';
 
 const Home = () => {
     const [randomAnime, setRandomAnime] = React.useState<AnimeModel[]>([]);
     const [topScoredAnime, setTopScoredAnime] = React.useState<AnimeModel[]>([]);
     const [mostPopulaeAnime, setMostPopularAnime] = React.useState<AnimeModel[]>([]);
+    const [mySuggestions, setMySuggestions] = React.useState<AnimeModel[]>([]);
 
     // set random animes from http
     React.useEffect(() => {
@@ -39,6 +40,16 @@ const Home = () => {
         });
     }, []);
 
+    // set my suggestions from http
+    React.useEffect(() => {
+        getMySuggestions().then((animesResponse: AnimeModel[]) => {
+            setMySuggestions(animesResponse);
+        }).catch((error: Error) => {
+            console.log(error.message);
+
+        });
+    }, []);
+
 
     return (
         <div className='d-flex flex-column'>
@@ -49,6 +60,10 @@ const Home = () => {
             <div className='mt-5'>
                 <h3 style={{ textAlign: "center" }}>Most popular anime</h3>
                 <AnimeCarousel animes={mostPopulaeAnime} />
+            </div>
+            <div className='my-5'>
+                <h3 style={{ textAlign: "center" }}>My suggestions</h3>
+                <AnimeCarousel animes={mySuggestions} />
             </div>
             <div className='my-5'>
                 <h3 style={{ textAlign: "center" }}>Some random anime</h3>

@@ -5,16 +5,21 @@ import com.example.CustomAnimeList.CustomAnimeLIstBackend.Repositories.AnimeRepo
 import com.example.CustomAnimeList.CustomAnimeLIstBackend.Response.PageableAnimeResponse;
 import com.example.CustomAnimeList.CustomAnimeLIstBackend.Services.AnimeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class AnimeServiceImpl implements AnimeService {
+
+    @Value("${my.suggestions.ids}")
+    private int[] mySuggestionsAnimeIds;
 
     private AnimeRepository animeRepository;
 
@@ -66,6 +71,17 @@ public class AnimeServiceImpl implements AnimeService {
     @Override
     public List<Anime> getMostPopularAnime(int limit) {
         return animeRepository.getMostPopularAnimes(PageRequest.of(0, limit));
+    }
+
+    @Override
+    public List<Anime> getMySuggestions() {
+        List<Anime> animeList = new ArrayList<>();
+
+        for(int id : mySuggestionsAnimeIds){
+            animeList.add(animeRepository.findById(id).get());
+        }
+
+        return animeList;
     }
 
 
