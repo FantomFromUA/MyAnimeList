@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-repeat: repeat;
-    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../images/ahegao-bg-patern.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../../public/images/ahegao-bg-patern.jpg");
     background-size: 400px 400px;
 }
 .home-carousel{
