@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-repeat: repeat;
-    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20230108141133/Ahegao-OFace-Anime.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../images/ahegao-bg-patern.jpg");
     background-size: 400px 400px;
 }
 .home-carousel{

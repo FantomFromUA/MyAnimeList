@@ -1,0 +1,50 @@
+.about-main-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-repeat: repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../images/ahegao-bg-patern.jpg");
+    background-size: 200px 200px;
+}
+
+.banner-text{
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.hero-component{
+    display: flex;
+}
+
+.about-images{
+    width: 50%;
+    height: auto;
+}
+
+.about-text-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.sing-up-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
