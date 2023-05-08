@@ -14,10 +14,29 @@
 .anime-carousel-container img{
     width: 12vw;
     height: auto;
+    max-height: 32vh;
     filter: brightness(100%);
     transition: filter 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
 }
 
 .anime-carousel-container:hover img {
     filter: brightness(70%);
+}
+
+.link-text-container{
+    width: 12vw;
+    position: absolute;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.link-text{
+    width: 12vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    text-decoration: none;
 }

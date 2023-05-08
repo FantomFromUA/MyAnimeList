@@ -6,11 +6,17 @@ import "./anime.css"
 
 const AnimeCarousel: React.FC<{ animes: AnimeModel[] }> = (props) => {
     console.log(props.animes);
-    
+
     return (
-            <Carousel variant="dark" indicators={false} interval={null}>
-                {Array.from({length: props.animes.length / 5}, (_ , i) => (
-                    <Carousel.Item key={i}>
+        <Carousel
+            variant="dark"
+            indicators={false}
+            interval={null}
+            nextIcon={<p style={{ fontSize: "40px" }}>&#10095;</p>}
+            prevIcon={<p style={{ fontSize: "40px" }}>&#10094;</p>}
+        >
+            {Array.from({ length: props.animes.length / 5 }, (_, i) => (
+                <Carousel.Item key={i}>
                     <div className='carousel-element'>
                         {props.animes.slice(i * 5, i * 5 + 5).map(anime => (
                             <div className='anime-carousel-container' key={anime.id}>
@@ -19,15 +25,15 @@ const AnimeCarousel: React.FC<{ animes: AnimeModel[] }> = (props) => {
                                     alt="Image"
                                     onClick={() => window.location.href = `/animes/${anime.id}`}
                                 />
-                                <div style={{ maxWidth: "12vw", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                                    <Link style={{ wordWrap: "break-word" }} to={`/animes/${anime.id}`}>{anime.title}</Link>
+                                <div className='link-text-container'>
+                                    <Link className='link-text' to={`/animes/${anime.id}`}>{anime.title}</Link>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </Carousel.Item>
-                ))}
-            </Carousel>
+            ))}
+        </Carousel>
     );
 }
 
