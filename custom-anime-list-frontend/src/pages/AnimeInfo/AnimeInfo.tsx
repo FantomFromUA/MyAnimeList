@@ -64,11 +64,14 @@ const AnimeInfo = () => {
                     <div>
                         <h6 style={{color: "white", textAlign: "center"}}>Info</h6>
                         {anime?.englishTitle !== null && <p className='info-text'><b>English Title:</b> <em>{anime?.englishTitle}</em></p>}
+                        {anime?.japaneseTitle !== null && <p className='info-text'><b>Japanese title:</b> <em>{anime?.japaneseTitle}</em></p> }
                         <p className='info-text'><b>Source:</b> <em>{anime?.source}</em></p>
+                        <p className='info-text'><b>Type:</b> <em>{anime?.type}</em></p>
                         <p className='info-text'><b>Status:</b> <em>{anime?.status}</em></p>
                         <p className='info-text'><b>Episodes:</b> <em>{anime?.episodes === 0 ? "unknown" : anime?.episodes}</em></p>
-                        <p className='info-text'><b>Studio:</b> <em>{anime?.studio}</em></p>
+                        <p className='info-text'><b>Studio:</b> <em>{anime?.studio === '' ? "unknown" : anime?.studio}</em></p>
                         <p className='info-text'><b>Genres: </b> <em>{anime?.genre}</em></p>
+                        <p className='info-text'><b>Rating: </b><em>{anime?.rating}</em></p>
                     </div>
                 </div>
             </div>
