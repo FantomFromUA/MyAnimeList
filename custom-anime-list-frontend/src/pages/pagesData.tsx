@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { routerType } from "../types/router.types";
 import About from "./About/About";
 import Home from "./Home/Home";
+import AnimeInfo from "./AnimeInfo/AnimeInfo";
 
 const pagesData: routerType[] = [
   {
@@ -16,7 +17,7 @@ const pagesData: routerType[] = [
   },
   {
     path: "animes/:id",
-    element: <h1>hello</h1>,
+    element: <AnimeInfo/>,
     title: "anime"
   }
 ];

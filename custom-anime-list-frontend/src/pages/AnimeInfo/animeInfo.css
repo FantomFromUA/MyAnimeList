@@ -1,0 +1,7 @@
+.bg-div{
+    width: 100vw;
+    min-height: 76vh;    
+    background-repeat: repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../../public/images/ahegao-bg-patern.jpg");
+    background-size: 400px 400px;
+}
