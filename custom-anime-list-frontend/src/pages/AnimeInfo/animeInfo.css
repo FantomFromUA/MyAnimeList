@@ -1,0 +1,63 @@
+.bg-div{
+    padding: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    min-height: 76vh;    
+    background-repeat: repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("../../../public/images/ahegao-bg-patern.jpg");
+    background-size: 400px 400px;
+}
+
+.anime-info-card{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    background-color: #212529;
+    box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.5);
+}
+
+.image-div{
+    margin: 15px;
+    max-width: 30%;
+    border: white solid 1px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-div img{
+    height: auto;
+    width: 20vw;
+}
+
+.anime-info{
+    flex: 1;
+}
+
+.div-stats{
+    text-align: center;
+    padding: 10px;
+}
+
+.stats-info{
+    width: 100%;
+    height: 20vh;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0);
+    
+}
+
+.stat{
+    font-size: xx-large;
+}
+
+.info-text{
+    color: #f0f0f0;
+    word-wrap: break-word;
+}

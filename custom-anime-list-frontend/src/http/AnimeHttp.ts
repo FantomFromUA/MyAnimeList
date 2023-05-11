@@ -1,6 +1,18 @@
 
 import AnimeModel from "../models/AnimeModel";
 
+export const getAnimeById =async (id: string) : Promise<AnimeModel> => {
+    const url = `http://localhost:9090/api/animes/${id}`;
+
+    const response = await fetch(url);
+    if(!response.ok){
+        throw new Error("Something went wrong!");
+    }
+
+    const responseJSON = await response.json();
+    return responseJSON;
+}
+
 export const searchAnimes = async (animeSearch: string, limit: number = 10) : Promise<AnimeModel[]> => {
 
     const url: string = `http://localhost:9090/api/animes/search?title=${animeSearch}&limit=${limit}`;
